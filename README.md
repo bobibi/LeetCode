@@ -1,3 +1,3 @@
 # LeetCode Solutions
 
-email: *bobibi.github@gmail.com
+* email: bobibi.github@gmail.com
