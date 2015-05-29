@@ -9,8 +9,10 @@
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
+        assert(head!=NULL);
         ListNode *left=head, *right=head, **pp=&head;
         while(n>0) {
+            assert(right->next!=NULL);
             right=right->next;
             n--;
         }
