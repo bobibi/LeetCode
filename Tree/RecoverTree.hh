@@ -19,36 +19,32 @@ public:
                 pre = cur->left;
                 while(pre->right && pre->right!=cur) pre = pre->right;
                 if(pre->right) { // all left visited
-                    pre->right = NULL;
-                    // visit cur
-                    ///
-					if(cur->val<last) {
-						second = cur;
-						found = true;
-					}
-					if(!found) first = cur;
-					last = cur->val;
-                    ///
-                    cur = cur->right;
-                } else {
+                    	pre->right = NULL;
+                    	// visit cur
+			if(cur->val<last) {
+				second = cur; // if two inorder consecutive nodes are swapped, then second will be cur
+				found = true;
+			}
+			if(!found) first = cur;
+			last = cur->val;
+                    	///
+                    	cur = cur->right;
+                } else { // visit left first
                 	pre->right = cur;
-                    cur = cur->left;
+                    	cur = cur->left;
                 }
-            } else {
+            } else { // no left
                 // visit cur
-				///
-				if (cur->val < last) {
-					second = cur;
-					found = true;
-				}
-				if (!found)
-					first = cur;
-				last = cur->val;
-				///
+		if (cur->val < last) {
+			second = cur;
+			found = true;
+		}
+		if (!found) first = cur;
+		last = cur->val;
+		///
                 cur = cur->right;
             }
         }
-        
         swap(first->val, second->val);
     }
 };
