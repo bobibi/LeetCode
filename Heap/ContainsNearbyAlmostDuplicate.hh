@@ -15,6 +15,7 @@ public:
         return false;
     }
     
+    // use long int to avoid overflow when doing subtracting
     long diff(long a, long b) {
         return a>b?a-b:b-a;
     }
